@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedinIn, FaMedium, FaInstagram, FaYoutube } from 'react-
 import profile from '@/data/profile.json'
 import styles from '@/styles/sections/AboutSection.module.css'
 
-const BIO      = profile.bio
+const BIO = profile.bio
 const WHO_ITEMS = profile.skills
 
 const ICON_MAP = { GitHub: FaGithub, LinkedIn: FaLinkedinIn, Medium: FaMedium, Instagram: FaInstagram, YouTube: FaYoutube }
@@ -15,14 +15,14 @@ const ICON_MAP = { GitHub: FaGithub, LinkedIn: FaLinkedinIn, Medium: FaMedium, I
 const SOCIALS = profile.socials.map(s => ({ Icon: ICON_MAP[s.label], href: s.href, label: s.label }))
 
 export default function AboutSection() {
-  const sectionRef  = useRef(null)
-  const photoRef    = useRef(null)
-  const contentRef  = useRef(null)
-  const socialsRef  = useRef(null)
+  const sectionRef = useRef(null)
+  const photoRef = useRef(null)
+  const contentRef = useRef(null)
+  const socialsRef = useRef(null)
   const intervalRef = useRef(null)
 
   const [typed, setTyped] = useState(0)
-  const [done,  setDone]  = useState(false)
+  const [done, setDone] = useState(false)
 
   useEffect(() => {
     const section = sectionRef.current
@@ -39,8 +39,8 @@ export default function AboutSection() {
       gsap.killTweensOf(contentRef.current)
       const socialIcons = socialsRef.current?.querySelectorAll('a') ?? []
       gsap.killTweensOf(socialIcons)
-      gsap.set(photoRef.current,   { opacity: 0, x: -50 })
-      gsap.set(contentRef.current, { opacity: 0, y:  40 })
+      gsap.set(photoRef.current, { opacity: 0, x: -50 })
+      gsap.set(contentRef.current, { opacity: 0, y: 40 })
       gsap.set(socialIcons, { opacity: 0, y: 20 })
       setTyped(0)
       setDone(false)
@@ -48,7 +48,7 @@ export default function AboutSection() {
 
     function playAnim() {
       resetAnim()
-      gsap.to(photoRef.current,   { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out' })
+      gsap.to(photoRef.current, { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out' })
       gsap.to(contentRef.current, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.15 })
       const socialIcons = socialsRef.current?.querySelectorAll('a') ?? []
       gsap.to(socialIcons, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1, delay: 0.5 })
@@ -68,8 +68,8 @@ export default function AboutSection() {
 
     function onScroll() {
       const inRange = Math.abs(scroller.scrollTop - section.offsetTop) < window.innerHeight * 0.5
-      if (inRange && !isActive)  { isActive = true;  playAnim() }
-      if (!inRange && isActive)  { isActive = false; resetAnim() }
+      if (inRange && !isActive) { isActive = true; playAnim() }
+      if (!inRange && isActive) { isActive = false; resetAnim() }
     }
 
     scroller.addEventListener('scroll', onScroll, { passive: true })
@@ -87,8 +87,8 @@ export default function AboutSection() {
         <div className={styles.photoWrap}>
           <div className={styles.photoFrame} data-about-photo>
             <Image
-              src="/assets/about.webp"
-              alt="Vaibhav Khushalani"
+              src="/assets/about.jpeg"
+              alt={profile.name.full}
               fill
               quality={100}
               sizes="(min-width: 768px) 30vw, 100vw"

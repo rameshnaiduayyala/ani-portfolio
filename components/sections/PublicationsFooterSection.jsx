@@ -16,16 +16,16 @@ import styles from '@/styles/sections/PublicationsFooterSection.module.css'
 const PUBS = profile.publications
 
 const SOCIAL_ICONS = {
-  GitHub:    <FaGithub    size={13} />,
-  LinkedIn:  <FaLinkedinIn  size={13} />,
-  Medium:    <FaMedium    size={13} />,
+  GitHub: <FaGithub size={13} />,
+  LinkedIn: <FaLinkedinIn size={13} />,
+  Medium: <FaMedium size={13} />,
   Instagram: <FaInstagram size={13} />,
-  YouTube:   <FaYoutube   size={13} />,
+  YouTube: <FaYoutube size={13} />,
 }
 
 const MOBILE_SOCIAL_ICONS = {
-  GitHub:    <FaGithub    size={20} />,
-  LinkedIn:  <FaLinkedinIn  size={20} />,
+  GitHub: <FaGithub size={20} />,
+  LinkedIn: <FaLinkedinIn size={20} />,
   Instagram: <FaInstagram size={20} />,
 }
 const HERO_SOCIAL_LABELS = ['GitHub', 'LinkedIn', 'Instagram']
@@ -85,44 +85,45 @@ function handleViewProjects() {
 }
 
 export default function PublicationsFooterSection() {
+  const initials = (profile.name.first[0] + profile.name.last[0]).toUpperCase()
   const wrapperRef = useRef(null)
-  const stickyRef  = useRef(null)
+  const stickyRef = useRef(null)
 
   // image
-  const imageWrapRef    = useRef(null)
+  const imageWrapRef = useRef(null)
   const imageOverlayRef = useRef(null)
 
   // publication content
   const pubContentRef = useRef(null)
-  const labelRef      = useRef(null)
-  const headingRef    = useRef(null)
-  const dividerRef    = useRef(null)
-  const itemRefs      = useRef([])
+  const labelRef = useRef(null)
+  const headingRef = useRef(null)
+  const dividerRef = useRef(null)
+  const itemRefs = useRef([])
 
   // image-only interstitial
   const interstitialRef = useRef(null)
 
   // footer
-  const canvasRef         = useRef(null)
-  const videoSrcRef       = useRef(null)
-  const footerContentRef  = useRef(null)
-  const leftRef         = useRef(null)
-  const rightRef        = useRef(null)
-  const bigNameRef      = useRef(null)
-  const bottomBarRef    = useRef(null)
+  const canvasRef = useRef(null)
+  const videoSrcRef = useRef(null)
+  const footerContentRef = useRef(null)
+  const leftRef = useRef(null)
+  const rightRef = useRef(null)
+  const bigNameRef = useRef(null)
+  const bottomBarRef = useRef(null)
 
   useEffect(() => {
-    const wrapper       = wrapperRef.current
-    const sticky        = stickyRef.current
-    const canvas        = canvasRef.current
-    const videoEl       = videoSrcRef.current
-    const scroller      = document.querySelector('main')
+    const wrapper = wrapperRef.current
+    const sticky = stickyRef.current
+    const canvas = canvasRef.current
+    const videoEl = videoSrcRef.current
+    const scroller = document.querySelector('main')
     if (!wrapper || !sticky || !scroller) return
 
     const isMobile = window.innerWidth < 768
 
     let renderer, vidUni, rafId, videoPlaying = false
-    let onMouseMove = () => {}, onResize = () => {}
+    let onMouseMove = () => { }, onResize = () => { }
 
     if (!isMobile && canvas && videoEl) {
       // ── Three.js video setup ────────────────────────────────
@@ -134,23 +135,23 @@ export default function PublicationsFooterSection() {
       renderer.setSize(W, H)
       renderer.setClearColor(0x000000, 0)
 
-      const scene  = new THREE.Scene()
+      const scene = new THREE.Scene()
       const camera = new THREE.OrthographicCamera(-W / 2, W / 2, H / 2, -H / 2, 0.1, 100)
       camera.position.z = 10
 
-      videoEl.src       = '/assets/footer-video.mp4'
-      videoEl.muted     = true
+      videoEl.src = '/assets/footer-video.mp4'
+      videoEl.muted = true
       videoEl.playsInline = true
-      videoEl.loop      = true
-      videoEl.preload   = 'auto'
+      videoEl.loop = true
+      videoEl.preload = 'auto'
 
       const vidTex = new THREE.VideoTexture(videoEl)
       vidTex.minFilter = THREE.LinearFilter
       vidTex.magFilter = THREE.LinearFilter
 
       vidUni = {
-        uVideo:       { value: vidTex },
-        uOpacity:     { value: 0 },
+        uVideo: { value: vidTex },
+        uOpacity: { value: 0 },
         uVideoAspect: { value: 16 / 9 },
         uCanvasAspect: { value: W / H },
       }
@@ -169,19 +170,19 @@ export default function PublicationsFooterSection() {
       scene.add(vidMesh)
 
       const mx = { tx: 0, ty: 0, x: 0, y: 0 }
-      onMouseMove = function(e) {
+      onMouseMove = function (e) {
         const r = sticky.getBoundingClientRect()
-        mx.tx = (e.clientX - r.left) / r.width  - 0.5
-        mx.ty = (e.clientY - r.top)  / r.height - 0.5
+        mx.tx = (e.clientX - r.left) / r.width - 0.5
+        mx.ty = (e.clientY - r.top) / r.height - 0.5
       }
       sticky.addEventListener('mousemove', onMouseMove)
 
-      onResize = function() {
+      onResize = function () {
         const w = sticky.offsetWidth
         const h = sticky.offsetHeight
         renderer.setSize(w, h)
-        camera.left   = -w / 2; camera.right  = w / 2
-        camera.top    =  h / 2; camera.bottom = -h / 2
+        camera.left = -w / 2; camera.right = w / 2
+        camera.top = h / 2; camera.bottom = -h / 2
         camera.updateProjectionMatrix()
         vidUni.uCanvasAspect.value = w / h
       }
@@ -204,7 +205,7 @@ export default function PublicationsFooterSection() {
 
     function resetPubAnim() {
       pubAnimDone = false
-      gsap.set(labelRef.current,   { opacity: 0, y: -16, rotateX: 40, transformPerspective: 500, transformOrigin: '50% 0%' })
+      gsap.set(labelRef.current, { opacity: 0, y: -16, rotateX: 40, transformPerspective: 500, transformOrigin: '50% 0%' })
       gsap.set(headingRef.current, { opacity: 0, y: -30, rotateX: 35, transformPerspective: 700, transformOrigin: '50% 0%' })
       gsap.set(dividerRef.current, { scaleX: 0, transformOrigin: 'left center' })
       itemRefs.current.forEach(el => {
@@ -215,7 +216,7 @@ export default function PublicationsFooterSection() {
     function playPubAnim() {
       if (pubAnimDone) return
       pubAnimDone = true
-      gsap.to(labelRef.current,   { opacity: 1, y: 0, rotateX: 0, duration: 0.55, ease: 'power3.out' })
+      gsap.to(labelRef.current, { opacity: 1, y: 0, rotateX: 0, duration: 0.55, ease: 'power3.out' })
       gsap.to(headingRef.current, { opacity: 1, y: 0, rotateX: 0, duration: 0.75, ease: 'expo.out', delay: 0.08 })
       gsap.to(dividerRef.current, { scaleX: 1, duration: 0.7, ease: 'power2.inOut', delay: 0.25 })
       itemRefs.current.forEach((el, i) => {
@@ -223,16 +224,18 @@ export default function PublicationsFooterSection() {
       })
     }
 
-    // ── Initial image position (full-width background) ───────
+    // ── Initial image position (centered, hidden) ───────
     function setImageLeft() {
       const vw = window.innerWidth
-      gsap.set(imageWrapRef.current, { width: vw, x: 0, opacity: 1 })
-      if (imageOverlayRef.current) gsap.set(imageOverlayRef.current, { opacity: 1 })
+      const w = vw * 0.46
+      const centerX = (vw - w) / 2
+      gsap.set(imageWrapRef.current, { width: w, x: centerX, opacity: 0 })
+      if (imageOverlayRef.current) gsap.set(imageOverlayRef.current, { opacity: 0 })
     }
 
     // ── Scroll-driven animation ───────────────────────────────
     function onScroll() {
-      const vh   = window.innerHeight
+      const vh = window.innerHeight
       // getBoundingClientRect is reliable regardless of offsetParent chain or navbar
       const dist = -wrapper.getBoundingClientRect().top
 
@@ -256,43 +259,59 @@ export default function PublicationsFooterSection() {
       const vw = window.innerWidth
 
       if (isMobile) {
-        // footer-mobile.webp static background - interstitial fades between pub and footer
-        const interIn  = Math.max(0, Math.min(1, (p - 0.28) / 0.17))
+        // footer-mobile.png static background - interstitial fades between pub and footer
+        const interIn = Math.max(0, Math.min(1, (p - 0.28) / 0.17))
         const interOut = Math.max(0, Math.min(1, (p - 0.60) / 0.12))
         gsap.set(interstitialRef.current, { opacity: interIn * (1 - interOut), pointerEvents: 'none' })
 
       } else {
-        // ── Phase 2: image shrinks full-width → centered (p 0.12 → 0.65) ──
-        const imgRaw = Math.max(0, Math.min(1, (p - 0.12) / 0.53))
-        const imgP   = easeInOut(imgRaw)
-
-        const startW  = vw
-        const endW    = vw * 0.46
-        const w       = startW + imgP * (endW - startW)
-        const centerX = imgP * (vw - w) / 2
-
-        // Dark overlay fades as image shrinks
-        if (imageOverlayRef.current) {
-          gsap.set(imageOverlayRef.current, { opacity: 1 - imgP })
+        // Keep video WebGL canvas uOpacity always at 1.0 so it is the continuous background
+        if (vidUni) {
+          vidUni.uOpacity.value = 1.0
         }
 
-        // ── Interstitial: fade in after pub, fade out before crossfade ──
-        const interIn  = Math.max(0, Math.min(1, (p - 0.25) / 0.15))
+        // Image wrap width and centering (always centered)
+        const w = vw * 0.46
+        const centerX = (vw - w) / 2
+        
+        // Image wrap opacity:
+        // Phase 1 (Publications): p 0 -> 0.28 -> opacity is 0
+        // Phase 2 (Interstitial): p 0.28 -> 0.65 -> opacity fades in (0.28 -> 0.38) and fades out (0.55 -> 0.65)
+        let imgOpacity = 0
+        if (p > 0.28 && p < 0.65) {
+          if (p < 0.38) {
+            imgOpacity = (p - 0.28) / 0.10 // fade in
+          } else if (p > 0.55) {
+            imgOpacity = 1 - (p - 0.55) / 0.10 // fade out
+          } else {
+            imgOpacity = 1.0
+          }
+        }
+        
+        gsap.set(imageWrapRef.current, {
+          width: w,
+          x: centerX,
+          opacity: imgOpacity
+        })
+
+        // Dark overlay on image is not needed
+        if (imageOverlayRef.current) {
+          gsap.set(imageOverlayRef.current, { opacity: 0 })
+        }
+
+        // Interstitial fade in/out
+        const interIn = Math.max(0, Math.min(1, (p - 0.25) / 0.15))
         const interOut = Math.max(0, Math.min(1, (p - 0.54) / 0.14))
         gsap.set(interstitialRef.current, { opacity: interIn * (1 - interOut), pointerEvents: 'none' })
+      }
 
-        // ── Phase 3: sine-eased crossfade image → video (p 0.65 → 0.92) ──
-        // Sine ease: both curves share same t so they are perceptually matched
-        const xfadeRaw = Math.max(0, Math.min(1, (p - 0.65) / 0.27))
-        const xfade    = 0.5 - 0.5 * Math.cos(Math.PI * xfadeRaw)
-
-        gsap.set(imageWrapRef.current, { width: w, x: centerX, opacity: 1 - xfade })
-        vidUni.uOpacity.value = xfade
-
-        if (xfade > 0.04 && !videoPlaying) {
+      // Play video when section is in view, pause when out of view (desktop only)
+      if (!isMobile && videoEl) {
+        const sectionInView = dist > -vh * 0.9
+        if (sectionInView && !videoPlaying) {
           videoPlaying = true
-          videoEl.play().catch(() => {})
-        } else if (xfade <= 0.04 && videoPlaying) {
+          videoEl.play().catch(() => { })
+        } else if (!sectionInView && videoPlaying) {
           videoPlaying = false
           videoEl.pause()
           videoEl.currentTime = 0
@@ -331,16 +350,15 @@ export default function PublicationsFooterSection() {
         <canvas ref={canvasRef} className={styles.glCanvas} />
         <video ref={videoSrcRef} className={styles.hiddenVideo} />
 
-        {/* ── Mobile background image (footer phase - mobile only) ── */}
+        {/* ── Mobile background video (mobile only) ── */}
         <div className={styles.mobileFooterBg}>
-          <Image
-            src="/assets/footer-mobile.webp"
-            alt=""
-            fill
-            quality={100}
+          <video
+            src="/assets/footer-video.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
             className={styles.mobileFooterBgImg}
-            sizes="100vw"
-            priority={false}
           />
         </div>
 
@@ -366,7 +384,7 @@ export default function PublicationsFooterSection() {
           <span className={styles.watermark} aria-hidden>WRITING</span>
 
           <div className={styles.pubHero}>
-            <p  ref={labelRef}   className={styles.label}>Research &amp; Writing</p>
+            <p ref={labelRef} className={styles.label}>Research &amp; Writing</p>
             <h2 ref={headingRef} className={styles.heading}>Publications</h2>
           </div>
 
@@ -552,7 +570,7 @@ export default function PublicationsFooterSection() {
           <div ref={bottomBarRef} className={styles.bottomBar}>
             <div className={styles.bottomLeft}>
               <div className={styles.monogram}>
-                <span className={styles.monoLetters}>VK</span>
+                <span className={styles.monoLetters}>{initials}</span>
                 <span className={styles.monoDot} />
               </div>
               <span className={styles.leftDivider} />

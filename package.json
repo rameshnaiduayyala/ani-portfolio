@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "Vaibhav Khushalani",
-    "email": "vaibhavkhush124@gmail.com",
-    "url": "https://github.com/VaibhavKhushalani"
+    "name": "Ramesh Ayyala",
+    "email": "ayyalarameshnaidu@gmail.com",
+    "url": "https://github.com/ramesh-naidu-ayyala"
   },
   "scripts": {
     "dev": "next dev",

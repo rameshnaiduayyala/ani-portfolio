@@ -3,11 +3,11 @@
     "tagline": "Portfolio 2026"
   },
   "hero": {
-    "taglineHighlight": "experiences",
-    "freelanceNote": "Available for freelance & full-time opportunities.",
+    "taglineHighlight": "applications",
+    "freelanceNote": "Available for full-time & contract opportunities.",
     "availableLabel": "Available for work",
-    "pills": ["AI Architect", "Full Stack Engineer", "Cinematic Creator", "MERN Stack"],
-    "specialistStat": { "value": "AI + Full Stack", "label": "Specialist" }
+    "pills": ["Full Stack Developer", ".NET Core Specialist", "React Developer", "AI Surveillance & DevOps"],
+    "specialistStat": { "value": ".NET + React", "label": "Specialist" }
   },
   "interstitial": {
     "availabilityLabel": "Availability",
@@ -16,7 +16,7 @@
   },
   "footer": {
     "eyebrow": "Available for collaborations",
-    "ctaLines": ["Crafting modern", "digital products", "that feel"],
-    "ctaAccent": "alive."
+    "ctaLines": ["Crafting robust", "web applications", "that scale"],
+    "ctaAccent": "seamlessly."
   }
 }
