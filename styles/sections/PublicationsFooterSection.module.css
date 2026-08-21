@@ -40,7 +40,7 @@
   z-index: 0;
 }
 
-/* ── Video canvas (footer phase background) ───────────── */
+/* ── Video canvas (footer phase background - desktop only) ── */
 .glCanvas {
   position: absolute;
   inset: 0;
@@ -49,6 +49,12 @@
   display: block;
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 767px) {
+  .glCanvas {
+    display: none; /* WebGL not used on mobile; video tag takes over */
+  }
 }
 
 .hiddenVideo {

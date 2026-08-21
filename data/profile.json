@@ -5,18 +5,18 @@
     "full": "Ramesh Ayyala"
   },
   "email": "ayyalarameshnaidu@gmail.com",
-  "tagline": "Building scalable, high-performance web applications with .NET Core & React.",
-  "description": "Full Stack Developer specializing in .NET Core Web API, React/React Native, AWS cloud provisioning, and AI-powered video analytics.",
+  "tagline": "Building scalable, high-performance web applications with React, Node.js & .NET Core Web APIs.",
+  "description": "Fullstack Developer specializing in React, Node.js, and .NET Core — delivering end-to-end web solutions from API design to responsive UI.",
   "roles": {
-    "short": "Full Stack Developer",
-    "detailed": "Full-Stack Engineer · .NET Core · React"
+    "short": "Fullstack Developer",
+    "detailed": "Fullstack Engineer · React · Node.js · .NET Core Web API"
   },
   "location": {
     "based": "Hyderabad, India",
     "availability": "Worldwide"
   },
   "available": true,
-  "bio": "Results-driven Full Stack Developer with 3 years of experience building scalable, high-performance web and mobile applications using .NET Core Web API and React/React Native. Proven expertise in end-to-end product delivery — from RESTful API design and database optimization to responsive UI development, cloud deployments on AWS, and containerization with Docker. Adept at Agile/SCRUM environments with a strong focus on code quality, TDD, and CI/CD. Demonstrated success migrating legacy codebases, building AI-powered SaaS products, and delivering business-critical features across healthcare and media domains.",
+  "bio": "Results-driven Fullstack Developer with 3 years of experience building scalable, high-performance web and mobile applications. Proficient across the full stack — React and React Native on the frontend, Node.js and .NET Core Web API on the backend, with cloud deployments on AWS and containerization via Docker. Proven expertise in RESTful API design, database optimization, and Agile/SCRUM delivery with strong emphasis on code quality, TDD, and CI/CD. Demonstrated success migrating legacy codebases, building AI-powered SaaS products, and delivering business-critical features across healthcare and media domains.",
   "stats": [
     {
       "value": "3+",
@@ -32,15 +32,15 @@
     }
   ],
   "skills": [
-    "Full Stack Dev",
-    "React/React Native",
+    "Fullstack Dev",
+    "React / React Native",
+    "Node.js / Express",
     ".NET Core API",
     "ASP.NET MVC",
     "SQL Database",
     "AWS Deployments",
     "Docker Container",
     "RESTful API",
-    "FastAPI & YOLO",
     "JWT & RBAC",
     "Agile/SCRUM"
   ],
@@ -53,7 +53,7 @@
       "type": "Full-time",
       "location": "Hyderabad, India",
       "period": "Jun 2023",
-      "periodEnd": "Present",
+      "periodEnd": "May 31, 2026",
       "bullets": [
         "Diagnosed and resolved client-reported issues efficiently, maintaining system reliability and developed AWS EC2/S3 bucket provisioning forms via Terraform.",
         "Successfully migrated legacy AngularJS codebase to React with TypeScript, improving application performance, scalability, and maintainability.",
@@ -63,12 +63,14 @@
       ],
       "desc": "Developed care management features, migrated AngularJS to React, provisioned AWS resources using Terraform, and optimized MSSQL database performance with JWT RBAC implementation.",
       "tech": [
-        ".NET Core",
-        "Entity Framework",
         "React",
+        "Node js",
+        "Express/Fastify",
         "TypeScript",
+        ".NET Core",
+        "PostgreSQL",
+        "Entity Framework",
         "MSSQL",
-        "Terraform",
         "AWS",
         "JWT"
       ]
@@ -83,13 +85,12 @@
       "link": "https://linkedin.com/in/ramesh-naidu-ayyala",
       "image": "/assets/project-careis.png",
       "tech": [
-        ".NET Core",
-        "EF Core",
+        "Node js",
+        "Express",
         "React",
         "TypeScript",
         "MSSQL",
-        "AWS",
-        "Terraform"
+        "AWS"
       ],
       "desc": "A comprehensive care services platform managing audits, policy management, training, and reporting. Features secure multi-tenant role-based access control (RBAC), legacy AngularJS-to-React migration, and custom cloud provisioning forms."
     },
@@ -120,6 +121,7 @@
       "image": "/assets/project-gazzee.png",
       "tech": [
         ".NET Core Web API",
+        "Node js",
         "React",
         "FastAPI",
         "Python",

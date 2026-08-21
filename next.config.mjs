@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   reactCompiler: true,
   images: {
-    qualities: [75, 80, 95, 100],
+    unoptimized: true,
   },
 };
 
