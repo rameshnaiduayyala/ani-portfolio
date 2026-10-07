@@ -1,8 +1,8 @@
-
 'use client'
 
-import { useEffect, useRef, Fragment } from 'react'
+import { useState, useEffect, useRef, Fragment } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import * as THREE from 'three'
 import { gsap } from '@/lib/gsap'
 import {
@@ -11,6 +11,7 @@ import {
 import { FiArrowUpRight, FiChevronDown } from 'react-icons/fi'
 import profile from '@/data/profile.json'
 import content from '@/data/content.json'
+import PolicyModal from '@/components/ui/PolicyModal'
 import styles from '@/styles/sections/PublicationsFooterSection.module.css'
 
 const PUBS = profile.publications
@@ -85,6 +86,7 @@ function handleViewProjects() {
 }
 
 export default function PublicationsFooterSection() {
+  const [activePolicy, setActivePolicy] = useState(null)
   const initials = (profile.name.first[0] + profile.name.last[0]).toUpperCase()
   const wrapperRef = useRef(null)
   const stickyRef = useRef(null)
@@ -541,6 +543,48 @@ export default function PublicationsFooterSection() {
                   <FaEnvelope size={12} />
                   {profile.email}
                 </a>
+
+                {/* Merchant & Compliance Links */}
+                <div className={styles.complianceBlock}>
+                  <p className={styles.complianceEntity}>
+                    <strong>{profile.merchantInfo?.tradeName || profile.name.full}</strong>
+                    <br />
+                    <span className={styles.complianceAddress}>{profile.merchantInfo?.registeredAddress}</span>
+                  </p>
+                  <div className={styles.complianceLinks}>
+                    <Link href="/services" className={styles.pricingBadgeLink}>
+                      Services
+                    </Link>
+                    <span className={styles.footerPipe}>·</span>
+                    <Link href="/pricing" className={styles.pricingBadgeLink}>
+                      Pricing →
+                    </Link>
+                    <span className={styles.footerPipe}>|</span>
+                    <button
+                      type="button"
+                      onClick={() => setActivePolicy('cancellation_refund')}
+                      className={styles.compliancePolicyBtn}
+                    >
+                      Refund Policy
+                    </button>
+                    <span className={styles.footerPipe}>|</span>
+                    <button
+                      type="button"
+                      onClick={() => setActivePolicy('terms_conditions')}
+                      className={styles.compliancePolicyBtn}
+                    >
+                      Terms
+                    </button>
+                    <span className={styles.footerPipe}>|</span>
+                    <button
+                      type="button"
+                      onClick={() => setActivePolicy('privacy_policy')}
+                      className={styles.compliancePolicyBtn}
+                    >
+                      Privacy
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -555,9 +599,14 @@ export default function PublicationsFooterSection() {
                   ))}
                   <span className={styles.ctaAccent}>{content.footer.ctaAccent}</span>
                 </p>
-                <a href={`mailto:${profile.email}`} className={styles.talkBtn}>
-                  Let&apos;s talk →
-                </a>
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                  <a href={`mailto:${profile.email}`} className={styles.talkBtn}>
+                    Let&apos;s talk →
+                  </a>
+                  <Link href="/pricing" className={styles.viewPricingBtn}>
+                    View Plans &amp; Pricing
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -576,7 +625,7 @@ export default function PublicationsFooterSection() {
               <span className={styles.leftDivider} />
               <div className={styles.copyBlock}>
                 <p className={styles.copy}>© {year} {profile.name.full.toUpperCase()}</p>
-                <p className={styles.copyAll}>ALL RIGHTS RESERVED</p>
+                <p className={styles.copyAll}>ALL RIGHTS RESERVED · PAYMENTS SECURED BY RAZORPAY</p>
               </div>
             </div>
             <div className={styles.bottomRight}>
@@ -592,6 +641,13 @@ export default function PublicationsFooterSection() {
         </div>
 
       </div>
+
+      {/* Compliance Policy Modal */}
+      <PolicyModal
+        isOpen={Boolean(activePolicy)}
+        onClose={() => setActivePolicy(null)}
+        policyKey={activePolicy}
+      />
     </div>
   )
 }

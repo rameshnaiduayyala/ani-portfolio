@@ -28,6 +28,9 @@ export default function Home() {
     const el = mainRef.current
     if (!el) return
 
+    document.documentElement.style.overflow = 'hidden'
+    document.body.style.overflow = 'hidden'
+
     // Fade to black → instant scrollTop jump → fade in
     // Used whenever we loop footer → first section
     function fadeLoop(targetScrollTop, targetIdx) {
@@ -144,6 +147,8 @@ export default function Home() {
       }
       window.removeEventListener('footer-loop-back', onFooterLoop)
       tweenRef.current?.kill()
+      document.documentElement.style.overflow = ''
+      document.body.style.overflow = ''
     }
   }, [])
 

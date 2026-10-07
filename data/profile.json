@@ -179,5 +179,184 @@
       "label": "Instagram",
       "href": "https://www.instagram.com/heyramesh__"
     }
-  ]
+  ],
+  "merchantInfo": {
+    "legalName": "Ramesh Ayyala",
+    "tradeName": "Ramesh Ayyala Consulting & Tech",
+    "registeredAddress": "Hyderabad, Telangana 500081, India",
+    "supportEmail": "ayyalarameshnaidu@gmail.com",
+    "supportPhone": "+91 98765 43210",
+    "operatingHours": "Monday - Friday, 9:00 AM - 6:00 PM IST"
+  },
+  "services": [
+    {
+      "id": "web-app-development",
+      "tag": "Web Applications",
+      "title": "Fullstack Web App Engineering",
+      "subtitle": "Next.js · React 19 · Node.js · .NET Core",
+      "description": "High-performance, scalable web applications built with modern frontend architectures, robust SSR/SSG rendering, and bulletproof backend APIs.",
+      "deliverables": [
+        "Interactive SPA / SSR web apps using React & Next.js",
+        "State management and real-time WebSocket integrations",
+        "SEO, Core Web Vitals, and cinematic micro-interactions",
+        "Legacy codebase migrations (Angular to modern React)"
+      ],
+      "technologies": ["React", "Next.js", "TypeScript", "Node.js", ".NET Core", "Tailwind CSS"],
+      "startingPriceINR": 24999
+    },
+    {
+      "id": "mobile-app-development",
+      "tag": "Mobile Apps",
+      "title": "Cross-Platform Mobile App Development",
+      "subtitle": "React Native · iOS & Android",
+      "description": "Native-feeling mobile apps crafted for iOS and Android with single-codebase efficiency, buttery-smooth gesture animations, and offline-first capabilities.",
+      "deliverables": [
+        "Native Android & iOS deployment builds",
+        "Push notifications, biometric auth & local storage",
+        "Hardware sensor integration & camera analytics",
+        "App Store & Google Play Console submission guidance"
+      ],
+      "technologies": ["React Native", "Expo", "TypeScript", "Redux Toolkit", "Native APIs"],
+      "startingPriceINR": 34999
+    },
+    {
+      "id": "backend-api-architecture",
+      "tag": "API & Backend",
+      "title": "Scalable REST & Microservices Architecture",
+      "subtitle": "ASP.NET Core Web API · Node.js · PostgreSQL · MSSQL",
+      "description": "Enterprise-grade API ecosystems engineered for high concurrency, rock-solid security, role-based access control (RBAC), and millisecond response times.",
+      "deliverables": [
+        "RESTful API design with comprehensive OpenAPI/Swagger docs",
+        "JWT, OAuth2, and HIPAA/GDPR-compliant security middleware",
+        "Database schema design, query optimization, and indexing",
+        "Third-party integrations (Razorpay, Stripe, AWS S3)"
+      ],
+      "technologies": [".NET Core Web API", "Entity Framework Core", "Fastify", "PostgreSQL", "MSSQL", "Redis"],
+      "startingPriceINR": 19999
+    },
+    {
+      "id": "cloud-devops-deployment",
+      "tag": "Cloud & AI Pipelines",
+      "title": "Cloud Infrastructure & Video Analytics",
+      "subtitle": "AWS · Docker · Terraform · Computer Vision",
+      "description": "Cloud deployment pipelines, automated infrastructure-as-code provisioning, and live media streaming pipelines with AI object detection.",
+      "deliverables": [
+        "AWS EC2, S3, RDS provisioning via Terraform",
+        "Docker containerization & CI/CD deployment automation",
+        "RTSP/RTMP live video pipelines with MediaMTX & YOLO",
+        "Cloud cost audits and performance tuning"
+      ],
+      "technologies": ["AWS", "Docker", "Terraform", "Python", "FastAPI", "MediaMTX"],
+      "startingPriceINR": 29999
+    }
+  ],
+  "pricing": [
+    {
+      "id": "starter-consultation",
+      "title": "Architectural Consultation & Audit",
+      "subtitle": "Technical Advisory & Review",
+      "description": "Comprehensive architectural review, performance profiling, and tech-stack assessment for modern React or .NET Core systems.",
+      "priceINR": 4999,
+      "billingType": "one-time",
+      "popular": false,
+      "features": [
+        "1-on-1 Deep-dive Architecture Session (90 mins)",
+        "Codebase Performance & Security Audit",
+        "Actionable Recommendations Report",
+        "Database Indexing & API Optimization Guidelines"
+      ]
+    },
+    {
+      "id": "mvp-sprint",
+      "title": "Fullstack Feature Sprint",
+      "subtitle": "Rapid Production Implementation",
+      "description": "End-to-end fullstack engineering sprint delivering robust, production-ready modules with RESTful APIs, clean UI, and test coverage.",
+      "priceINR": 24999,
+      "billingType": "per sprint",
+      "popular": true,
+      "features": [
+        "React / Next.js Responsive Front-end Architecture",
+        "Secure Node.js / .NET Core Web API with JWT RBAC",
+        "Database Schema Design & Query Optimization",
+        "Docker Containerization & CI/CD Deployment setup",
+        "14 Days Post-delivery Support & Warranty"
+      ]
+    },
+    {
+      "id": "enterprise-retained",
+      "title": "Enterprise Dedicated Retainer",
+      "subtitle": "Continuous Engineering & Maintenance",
+      "description": "Dedicated monthly engineering leadership, legacy system migrations (Angular to React), and high-availability cloud maintenance.",
+      "priceINR": 69999,
+      "billingType": "per month",
+      "popular": false,
+      "features": [
+        "Dedicated Engineering Bandwidth (40 hrs/month)",
+        "Complex Legacy Migration & Modernization",
+        "Direct Slack / Video Sync & Priority 24h SLA",
+        "AWS Cloud Infrastructure Provisioning (Terraform)",
+        "Automated Health Checks & Observability"
+      ]
+    }
+  ],
+  "policies": {
+    "cancellation_refund": {
+      "title": "Cancellation & Refund Policy",
+      "lastUpdated": "April 2026",
+      "sections": [
+        {
+          "heading": "1. Cancellation Policy",
+          "body": "Clients can request cancellation of booked consulting or development services by notifying us via email at ayyalarameshnaidu@gmail.com within 24 hours of placing the order or before project work officially commences."
+        },
+        {
+          "heading": "2. Refund Eligibility & Timelines",
+          "body": "If service deliverables deviate fundamentally from agreed specifications, or if cancellation is requested prior to kick-off, a refund will be evaluated. Approved refunds are initiated immediately and credited back to the customer's original payment method via Razorpay within 5–7 business days."
+        },
+        {
+          "heading": "3. Non-Refundable Deliverables",
+          "body": "Consulting sessions already conducted, custom software modules delivered and approved, and cloud resources provisioned on client behalf are non-refundable."
+        }
+      ]
+    },
+    "terms_conditions": {
+      "title": "Terms and Conditions",
+      "lastUpdated": "April 2026",
+      "sections": [
+        {
+          "heading": "1. Acceptance of Terms",
+          "body": "By contracting engineering services or purchasing packages on this website, you agree to comply with and be bound by these Terms of Service provided by Ramesh Ayyala."
+        },
+        {
+          "heading": "2. Scope of Services & Payments",
+          "body": "All quotes and service prices are quoted in Indian Rupees (INR). Payments are collected securely through our authorized payment gateway partner, Razorpay. Service deliverables commence upon successful payment confirmation."
+        },
+        {
+          "heading": "3. Intellectual Property Rights",
+          "body": "Upon settlement of all invoice amounts, full intellectual property and source code ownership for custom deliverables are transferred to the client, unless third-party open-source components apply."
+        },
+        {
+          "heading": "4. Governing Law",
+          "body": "These terms and agreements shall be governed by and construed in accordance with the laws of India, under the exclusive jurisdiction of the courts of Hyderabad, Telangana."
+        }
+      ]
+    },
+    "privacy_policy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "April 2026",
+      "sections": [
+        {
+          "heading": "1. Information Collected",
+          "body": "We only collect necessary client contact details (full name, email, phone number, and billing address) solely for fulfilling service agreements, communication, and generating statutory tax invoices."
+        },
+        {
+          "heading": "2. Payment Security",
+          "body": "We do not store or process payment card numbers, UPI PINs, or banking credentials on our servers. All financial transactions are securely processed by Razorpay in accordance with PCI-DSS standards."
+        },
+        {
+          "heading": "3. Data Disclosure & Protection",
+          "body": "Your information is treated with strict confidentiality and is never sold, traded, or shared with third-party advertisers. Information is only shared with statutory authorities if required by applicable Indian law."
+        }
+      ]
+    }
+  }
 }

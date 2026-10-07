@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -116,12 +117,28 @@ export default function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <a
-          href={`mailto:${profile.email}`}
-          className={`${styles.emailBtn} rounded-full text-xs font-semibold px-5 h-8`}
-        >
-          Email me
-        </a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+          <Link
+            href="/services"
+            className={`${styles.servicesNavBtn} rounded-full text-xs font-semibold px-4 h-8`}
+          >
+            Services
+          </Link>
+
+          <Link
+            href="/pricing"
+            className={`${styles.pricingNavBtn} rounded-full text-xs font-semibold px-4 h-8`}
+          >
+            Pricing
+          </Link>
+
+          <a
+            href={`mailto:${profile.email}`}
+            className={`${styles.emailBtn} rounded-full text-xs font-semibold px-5 h-8`}
+          >
+            Email me
+          </a>
+        </div>
 
         <button
           className={styles.hamburger}
@@ -151,6 +168,21 @@ export default function Navbar() {
               {label}
             </button>
           ))}
+          <Link
+            href="/services"
+            className={styles.mobileNavLink}
+            style={{ color: 'var(--accent)' }}
+            onClick={() => setMenuOpen(false)}
+          >
+            Services
+          </Link>
+          <Link
+            href="/pricing"
+            className={styles.mobileNavLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            Pricing &amp; Plans
+          </Link>
           <a
             href={`mailto:${profile.email}`}
             className={styles.mobileMailLink}

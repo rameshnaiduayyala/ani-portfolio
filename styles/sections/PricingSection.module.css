@@ -1,0 +1,306 @@
+/* CSS Module for PricingSection */
+.pricingContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: rgba(247, 147, 30, 0.1);
+  border: 1px solid rgba(247, 147, 30, 0.25);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.title {
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+}
+
+.titleGradient {
+  background: linear-gradient(135deg, var(--hero-start), var(--hero-mid), var(--hero-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #101010;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 2.25rem 1.75rem 2rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(247, 147, 30, 0.4);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(247, 147, 30, 0.08);
+}
+
+.cardPopular {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, rgba(247, 147, 30, 0.06) 0%, rgba(16, 16, 16, 1) 40%);
+  box-shadow: 0 14px 45px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(247, 147, 30, 0.15);
+}
+
+.badge {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--hero-mid), var(--hero-end));
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(232, 85, 0, 0.4);
+  white-space: nowrap;
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.35rem 0;
+  letter-spacing: -0.02em;
+}
+
+.cardSubtitle {
+  font-size: 0.8rem;
+  font-family: var(--font-geist-mono), monospace;
+  color: var(--accent);
+  margin: 0 0 0.75rem 0;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.55;
+  margin: 0;
+  min-height: 3.8rem;
+}
+
+.priceBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 1.75rem 0 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.priceAmount {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+.priceType {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.45;
+}
+
+.checkIcon {
+  color: var(--accent);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.actionButton {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, var(--hero-mid), var(--hero-end));
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(232, 85, 0, 0.25);
+}
+
+.btnPrimary:hover {
+  background: linear-gradient(135deg, var(--hero-start), var(--hero-mid));
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.btnSecondary:hover {
+  background: rgba(247, 147, 30, 0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Compliance Merchant Box */
+.complianceBox {
+  margin-top: 4.5rem;
+  padding: 2.25rem 2rem;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .complianceBox {
+    grid-template-columns: 1.4fr 1.2fr 1fr;
+    align-items: start;
+  }
+}
+
+.merchantColTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.75rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.merchantText {
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+  margin: 0 0 0.5rem 0;
+}
+
+.merchantText strong {
+  color: #ffffff;
+}
+
+.policyLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.policyButton {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.825rem;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.policyButton:hover {
+  color: var(--hero-start);
+  text-decoration: underline;
+}
+
+.paymentNotice {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
