@@ -6,17 +6,34 @@
     "taglineHighlight": "applications",
     "freelanceNote": "Available for full-time & contract opportunities.",
     "availableLabel": "Available for work",
-    "pills": ["Full Stack Developer", ".NET Core Specialist", "React Developer", "AI Surveillance & DevOps"],
-    "specialistStat": { "value": ".NET + React", "label": "Specialist" }
+    "pills": [
+      "Full Stack Developer",
+      "React Developer",
+      "Node js Developer",
+      "ASP.NET Core Web APIs",
+      "AI Surveillance"
+    ],
+    "specialistStat": {
+      "value": "MERN Stack",
+      "label": "Specialist"
+    }
   },
   "interstitial": {
     "availabilityLabel": "Availability",
     "basedInLabel": "Based in",
-    "statLabels": ["Years\nexperience", "Projects\ndelivered", "Companies\nworked at"]
+    "statLabels": [
+      "Years\nexperience",
+      "Projects\ndelivered",
+      "Companies\nworked at"
+    ]
   },
   "footer": {
     "eyebrow": "Available for collaborations",
-    "ctaLines": ["Crafting robust", "web applications", "that scale"],
+    "ctaLines": [
+      "Crafting robust",
+      "web applications",
+      "that scale"
+    ],
     "ctaAccent": "seamlessly."
   }
 }
